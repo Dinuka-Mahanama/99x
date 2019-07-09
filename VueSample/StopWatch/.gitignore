@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+# /dist/ # keeping this directory "so we can always keep a pristine copy of what we've deployed to heroku" -- https://medium.com/netscape/deploying-a-vue-js-2-x-app-to-heroku-in-5-steps-tutorial-a69845ace489
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
