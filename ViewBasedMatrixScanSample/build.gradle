@@ -1,0 +1,35 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion global_compileSdkVersion
+    buildToolsVersion global_buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.scandit.ViewBasedMatrixScanSample"
+
+        minSdkVersion global_minSdkVersion
+        targetSdkVersion global_targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            sourceSets {
+                main {
+                    manifest.srcFile 'AndroidManifest.xml'
+                    java.srcDirs = ['src']
+                    resources.srcDirs = ['src']
+                    aidl.srcDirs = ['src']
+                    renderscript.srcDirs = ['src']
+                    res.srcDirs = ['res']
+                    assets.srcDirs = ['assets']
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+}
