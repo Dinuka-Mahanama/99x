@@ -3,8 +3,10 @@ const license = require('!raw-loader!!./license.txt')
 const application = require("tns-core-modules/application")
 const platformModule = require("tns-core-modules/platform")
 import IVMF from "../scandit/bubble/IndicatorViewModelFactory"
+import { Script } from "vm";
 let context 
 let picker
+
 export default {
     inti() {
 

@@ -2,14 +2,12 @@ let permissions = require('nativescript-permissions')
 const license = require('!raw-loader!!./license.txt')
 const application = require("tns-core-modules/application")
 import Listerner from "../scandit/MatrixScanListener"
-import { listenerCount } from "cluster";
 
 function scanItem(time, code, value) {
   let scan = { time, code, value }
   console.log('Updating scans with', scan.value)
 }
 
-var MS = new Listerner();
 export default {
   init() {
 
@@ -105,8 +103,9 @@ export default {
         }))
 
       try {
-         let matrixScanListener =MS.MatrixScanOverlayListener(context, picker)
+         let matrixScanListener =Listerner.MatrixScanOverlayListener(context, picker)
          let matrixScan = new com.scandit.matrixscan.MatrixScan(picker, matrixScanListener)
+         
       } catch (err) {
         console.log('error', err.message)
       }

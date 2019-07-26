@@ -1,11 +1,13 @@
 <template>
-  <Page>
-    <ActionBar title="BarCode Scan Game" />
-    <StackLayout>
-      <Button text="Normal Scan" @tap="scan"/>
-      <Button text="Matrix Scan" @tap="scanMatrix"/>
-    </StackLayout>
-  </Page>
+<Frame>
+    <Page>
+      <ActionBar title="BarCode Scan Game" />
+      <StackLayout>
+        <Button text="Normal Scan" @tap="scan"/>
+        <Button text="Matrix Scan" @tap="scanMatrix"/>
+      </StackLayout>
+    </Page>
+</Frame>
 </template>
 
 <script >
