@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Captured Label &mdash; Data Capture SDK 6.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'6.0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Label Capture Enumerations" href="enums.html" />
+    <link rel="prev" title="ScanditLabelCapture" href="../api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Data Capture SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../run-samples.html">Run our Sample Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add-sdk.html">Add the SDK to Your App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Barcode Scanning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started-barcode.html">Get Started With Barcode Scanning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scan-area.html">Set up the Active Scan Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui-examples.html">Choose the Scanner UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configure-barcodes.html">Configure Which Barcodes Are Read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../barcode-symbologies.html">Barcode Symbologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimize-performance.html">Optimize Scanning Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MatrixScan + Augmented Reality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started-matrixscan.html">Get Started With MatrixScan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add-augmented-reality-overlay.html">Add AR Overlays in MatrixScan</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data Capture SDK in Detail</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../core-concepts.html">Core Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../core/api.html">ScanditCaptureCore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../barcode-capture/api.html">ScanditBarcodeCapture</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">ScanditLabelCapture</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Captured Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enums.html">Label Capture Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label-capture.html">Label Capture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label-capture-listener.html">Label Capture Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label-capture-session.html">Label Capture Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label-capture-settings.html">Label Capture Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="label-field.html">Captured Field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/label-capture-basic-overlay.html">Label Capture Basic Overlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/label-capture-basic-overlay-listener.html">Label Capture Basic Overlay Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#classes-interfaces">Classes/Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#enumerations-constants">Enumerations/Constants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support &amp; FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ssl.scandit.com/terms/specifications.pdf">Barcode Scanner Requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scandit.com/barcode-scanner-sdk.html">SDK 5.x Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrate-to-6.html">Migrate from Barcode Scanner 5.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://ssl.scandit.com">Dashboard</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data Capture SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">ScanditLabelCapture</a> &raquo;</li>
+        
+      <li>Captured Label</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="captured-label">
+<h1>Captured Label<a class="headerlink" href="#captured-label" title="Permalink to this headline">#</a></h1>
+<p>Defined in package <em>com.scandit.datacapture.label.data</em></p>
+<dl class="class">
+<dt id="class-scandit.datacapture.label.CapturedLabel">
+<code class="descname">CapturedLabel</code><a class="headerlink" href="#class-scandit.datacapture.label.CapturedLabel" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class CapturedLabel</code></pre><p>A captured label tracked over multiple frames. This class holds the list of label fields as well as the predicted boundary of the label. Each instance of a found label has a unique tracking Id which remains constant over multiple frames.</p>
+<dl class="property">
+<dt id="property-scandit.datacapture.label.CapturedLabel.Fields">
+<code class="descname">fields</code><a class="headerlink" href="#property-scandit.datacapture.label.CapturedLabel.Fields" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/util/List.html" title="List">List</a>&lt;&#64;NonNull <a class="reference internal" href="label-field.html#class-scandit.datacapture.label.LabelField" title="LabelField class">LabelField</a>&gt; <code class="descname">getFields</code>()
+</pre><p>List of fields in the form. For each field in the label description, exactly one captured field is returned.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.label.CapturedLabel.Name">
+<code class="descname">name</code><a class="headerlink" href="#property-scandit.datacapture.label.CapturedLabel.Name" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/lang/String.html" title="String">String</a> <code class="descname">getName</code>()
+</pre><p>The name of this label, e.g. <em>label-a</em>. This property can be used in case multiple different label definitions are used at the same time.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.label.CapturedLabel.IsComplete">
+<code class="descname">isComplete</code><a class="headerlink" href="#property-scandit.datacapture.label.CapturedLabel.IsComplete" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">boolean</span></code> <code class="descname">isComplete</code>()
+</pre><p>Whether the label has been completely scanned. True as soon as all the required fields are present. Optional fields do not need to be present for this property to be true.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.label.CapturedLabel.PredictedBounds">
+<code class="descname">predictedBounds</code><a class="headerlink" href="#property-scandit.datacapture.label.CapturedLabel.PredictedBounds" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="../../core/api/common.html#struct-scandit.datacapture.core.Quadrilateral" title="Quadrilateral struct">Quadrilateral</a> <code class="descname">getPredictedBounds</code>()
+</pre><p>The predicted label bounds in image coordinates. These coordinates will need to be converted to view coordinates before they can be visualized.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.label.CapturedLabel.DeltaTimeToPrediction">
+<code class="descname">deltaTimeToPrediction</code><a class="headerlink" href="#property-scandit.datacapture.label.CapturedLabel.DeltaTimeToPrediction" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="../../core/api/common.html#class-scandit.datacapture.core.TimeInterval" title="TimeInterval class">TimeInterval</a> <code class="descname">getDeltaTimeToPrediction</code>()
+</pre><p>The delta time  used for predicting the label bounds (<a class="reference internal" href="#property-scandit.datacapture.label.CapturedLabel.PredictedBounds" title="predictedBounds property">predictedBounds</a>) as well as the field locations (available as <a class="reference internal" href="label-field.html#property-scandit.datacapture.label.LabelField.PredictedLocation" title="LabelField.predictedLocation property">LabelField.predictedLocation</a>).</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.label.CapturedLabel.TrackingId">
+<code class="descname">trackingId</code><a class="headerlink" href="#property-scandit.datacapture.label.CapturedLabel.TrackingId" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getTrackingId</code>()
+</pre><p>The tracking identifier for this label.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scandit AG
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-23556890-7', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

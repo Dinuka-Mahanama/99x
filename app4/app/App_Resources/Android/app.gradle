@@ -1,0 +1,26 @@
+// Add your native dependencies here:
+project.ext {
+    googlePlayServicesVersion = "+"
+}
+
+repositories {
+    flatDir {
+        dirs "../../../libs"
+    }
+}
+
+dependencies {
+    implementation(name:'ScanditBarcodeScannerV5', ext:'aar')
+    compile 'com.android.support:multidex:1.0.0'
+    compile "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
+}
+android {
+  defaultConfig {  
+    generatedDensities = []
+    multiDexEnabled true
+    applicationId = "org.nativescript.application"
+  }
+  aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+  }  
+} 

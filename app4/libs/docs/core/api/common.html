@@ -1,0 +1,762 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Common Data Structures &mdash; Data Capture SDK 6.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'6.0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Context Status" href="context-status.html" />
+    <link rel="prev" title="Camera Settings" href="camera-settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Data Capture SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../run-samples.html">Run our Sample Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add-sdk.html">Add the SDK to Your App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Barcode Scanning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started-barcode.html">Get Started With Barcode Scanning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scan-area.html">Set up the Active Scan Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui-examples.html">Choose the Scanner UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configure-barcodes.html">Configure Which Barcodes Are Read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../barcode-symbologies.html">Barcode Symbologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimize-performance.html">Optimize Scanning Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MatrixScan + Augmented Reality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started-matrixscan.html">Get Started With MatrixScan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add-augmented-reality-overlay.html">Add AR Overlays in MatrixScan</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data Capture SDK in Detail</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../core-concepts.html">Core Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">ScanditCaptureCore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../serialization.html">Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anchor.html">Anchor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera-settings.html">Camera Settings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Common Data Structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#misc-types">Misc Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geometric-types">Geometric Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="context-status.html">Context Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context.html">Data Capture Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context-frame-listener.html">Data Capture Context Frame Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context-listener.html">Data Capture Context Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-mode.html">Data Capture Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="direction.html">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback.html">Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame-data.html">Frame Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame-source.html">Frame Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame-source-listener.html">Frame Source Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laserline-viewfinder.html">Laserline Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location-selection.html">Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radius-location-selection.html">Radius Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangular-location-selection.html">Rectangular Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangular-viewfinder.html">Rectangular Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spotlight-viewfinder.html">Spotlight Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewfinder.html">Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/brush.html">Brush</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/control.html">Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-overlay.html">Data Capture Overlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-view.html">Data Capture View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-view-listener.html">Data Capture View Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/torch-switch-control.html">Torch Switch Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#camera-and-frame-sources">Camera and Frame Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#context-and-capture-modes">Context and Capture Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#location-selection">Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#user-interface">User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#misc-data-structures">Misc Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../barcode-capture/api.html">ScanditBarcodeCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../label-capture/api.html">ScanditLabelCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support &amp; FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ssl.scandit.com/terms/specifications.pdf">Barcode Scanner Requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scandit.com/barcode-scanner-sdk.html">SDK 5.x Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrate-to-6.html">Migrate from Barcode Scanner 5.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://ssl.scandit.com">Dashboard</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data Capture SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">ScanditCaptureCore</a> &raquo;</li>
+        
+      <li>Common Data Structures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="common-data-structures">
+<h1>Common Data Structures<a class="headerlink" href="#common-data-structures" title="Permalink to this headline">#</a></h1>
+<p>Defined in package <em>com.scandit.datacapture.core</em></p>
+<div class="section" id="misc-types">
+<h2>Misc Types<a class="headerlink" href="#misc-types" title="Permalink to this headline">#</a></h2>
+<dl class="class">
+<dt id="class-scandit.datacapture.core.EncodingRange">
+<code class="descname">EncodingRange</code><a class="headerlink" href="#class-scandit.datacapture.core.EncodingRange" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class EncodingRange</code></pre><p>Defines the encoding of a range of bytes.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.EncodingRange.EncodingRange">
+<code class="descname">EncodingRange()</code><a class="headerlink" href="#method-scandit.datacapture.core.EncodingRange.EncodingRange" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">EncodingRange</code>(&#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/lang/String.html" title="String">String</a> <em>ianaName</em>,
+        <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>startIndex</em>,
+        <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>endIndex</em>)</pre><p>Construct a new encoding range.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.EncodingRange.IanaName">
+<code class="descname">ianaName</code><a class="headerlink" href="#property-scandit.datacapture.core.EncodingRange.IanaName" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/lang/String.html" title="String">String</a> <code class="descname">getIanaName</code>()
+</pre><p>Charset encoding name as defined by <a class="reference external" href="http://www.iana.org/assignments/character-sets/character-sets.xhtml">IANA</a>.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.EncodingRange.StartIndex">
+<code class="descname">startIndex</code><a class="headerlink" href="#property-scandit.datacapture.core.EncodingRange.StartIndex" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getStartIndex</code>()
+</pre><p>Start index of this encoding range</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.EncodingRange.EndIndex">
+<code class="descname">endIndex</code><a class="headerlink" href="#property-scandit.datacapture.core.EncodingRange.EndIndex" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getEndIndex</code>()
+</pre><p>End index (first index after the last) of this encoding range.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="interface">
+<dt id="interface-scandit.datacapture.core.ICallback">
+<code class="descname">Callback</code><a class="headerlink" href="#interface-scandit.datacapture.core.ICallback" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">interface Callback</code>&lt;<code class="descname">T</code>&gt;</pre><p>Interface for a callback/callable accepting a generic parameter of type <em>T</em>.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.ICallback.Run">
+<code class="descname">run()</code><a class="headerlink" href="#method-scandit.datacapture.core.ICallback.Run" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">run</code>(&#64;NonNull <code class="docutils literal notranslate"><span class="pre">T</span></code> <em>value</em>)</pre><p>Called when the callback is invoked.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="geometric-types">
+<h2>Geometric Types<a class="headerlink" href="#geometric-types" title="Permalink to this headline">#</a></h2>
+<dl class="enum">
+<dt id="enum-scandit.datacapture.core.MeasureUnit">
+<code class="descname">MeasureUnit</code><a class="headerlink" href="#enum-scandit.datacapture.core.MeasureUnit" title="Permalink to this definition">#</a></dt>
+<dd><p>Specifies in what units the value has been specified (fraction, device-independent pixels, pixels).</p>
+<dl class="value">
+<dt id="value-scandit.datacapture.core.MeasureUnit.Dip">
+<code class="descname">DIP</code><a class="headerlink" href="#value-scandit.datacapture.core.MeasureUnit.Dip" title="Permalink to this definition">#</a></dt>
+<dd><p>Value is measured in device-independent pixels.</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.MeasureUnit.Pixel">
+<code class="descname">PIXEL</code><a class="headerlink" href="#value-scandit.datacapture.core.MeasureUnit.Pixel" title="Permalink to this definition">#</a></dt>
+<dd><p>Value is measured in pixels.</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.MeasureUnit.Fraction">
+<code class="descname">FRACTION</code><a class="headerlink" href="#value-scandit.datacapture.core.MeasureUnit.Fraction" title="Permalink to this definition">#</a></dt>
+<dd><p>Value is measured as a fraction. Valid values range from 0 to 1. This can be used to specify values in relative coordinates with respect to a reference, e.g. the view width or height.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.Point">
+<code class="descname">Point</code><a class="headerlink" href="#struct-scandit.datacapture.core.Point" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class Point</code></pre><dl class="method">
+<dt id="method-scandit.datacapture.core.Point.Point">
+<code class="descname">Point()</code><a class="headerlink" href="#method-scandit.datacapture.core.Point.Point" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">Point</code>(<code class="docutils literal notranslate"><span class="pre">float</span></code> <em>x</em>,
+        <code class="docutils literal notranslate"><span class="pre">float</span></code> <em>x</em>)</pre><p>Construct a new point at position <em>x</em> and <em>y</em>.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Point.X">
+<code class="descname">x</code><a class="headerlink" href="#property-scandit.datacapture.core.Point.X" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">getX</code>()
+</pre><p>X coordinate of the point.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Point.Y">
+<code class="descname">y</code><a class="headerlink" href="#property-scandit.datacapture.core.Point.Y" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">getY</code>()
+</pre><p>Y coordinate of the point.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.PointWithUnit">
+<code class="descname">PointWithUnit</code><a class="headerlink" href="#struct-scandit.datacapture.core.PointWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class PointWithUnit</code></pre><dl class="method">
+<dt id="method-scandit.datacapture.core.PointWithUnit.PointWithUnit">
+<code class="descname">PointWithUnit()</code><a class="headerlink" href="#method-scandit.datacapture.core.PointWithUnit.PointWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">PointWithUnit</code>(&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>x</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>y</em>)</pre><p>Construct a new point at position <em>x</em> and <em>y</em>.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.PointWithUnit.X">
+<code class="descname">x</code><a class="headerlink" href="#property-scandit.datacapture.core.PointWithUnit.X" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getX</code>()
+</pre><p>X coordinate of the point.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.PointWithUnit.Y">
+<code class="descname">y</code><a class="headerlink" href="#property-scandit.datacapture.core.PointWithUnit.Y" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getY</code>()
+</pre><p>Y coordinate of the point.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.Rect">
+<code class="descname">Rect</code><a class="headerlink" href="#struct-scandit.datacapture.core.Rect" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class Rect</code></pre><dl class="method">
+<dt id="method-scandit.datacapture.core.Rect.Rect">
+<code class="descname">Rect()</code><a class="headerlink" href="#method-scandit.datacapture.core.Rect.Rect" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">Rect</code>(&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <em>origin</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Size2" title="Size2 struct">Size2</a> <em>size</em>)</pre><p>Construct a new rectangle.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Rect.Origin">
+<code class="descname">origin</code><a class="headerlink" href="#property-scandit.datacapture.core.Rect.Origin" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <code class="descname">getOrigin</code>()
+</pre><p>The origin (top-left corner) of the rectangle.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Rect.Size">
+<code class="descname">size</code><a class="headerlink" href="#property-scandit.datacapture.core.Rect.Size" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Size2" title="Size2 struct">Size2</a> <code class="descname">getSize</code>()
+</pre><p>The size of the rectangle.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.RectWithUnit">
+<code class="descname">RectWithUnit</code><a class="headerlink" href="#struct-scandit.datacapture.core.RectWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class RectWithUnit</code></pre><dl class="method">
+<dt id="method-scandit.datacapture.core.RectWithUnit.RectWithUnit">
+<code class="descname">RectWithUnit()</code><a class="headerlink" href="#method-scandit.datacapture.core.RectWithUnit.RectWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">RectWithUnit</code>(&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.PointWithUnit" title="PointWithUnit struct">PointWithUnit</a> <em>point</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.SizeWithUnit" title="SizeWithUnit struct">SizeWithUnit</a> <em>size</em>)</pre><p>Construct a new rectangle with unit.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.RectWithUnit.Origin">
+<code class="descname">origin</code><a class="headerlink" href="#property-scandit.datacapture.core.RectWithUnit.Origin" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.PointWithUnit" title="PointWithUnit struct">PointWithUnit</a> <code class="descname">getOrigin</code>()
+</pre><p>The origin (top-left corner) of the rectangle.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.RectWithUnit.Size">
+<code class="descname">size</code><a class="headerlink" href="#property-scandit.datacapture.core.RectWithUnit.Size" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.SizeWithUnit" title="SizeWithUnit struct">SizeWithUnit</a> <code class="descname">getSize</code>()
+</pre><p>The size of the rectangle.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.Size2">
+<code class="descname">Size2</code><a class="headerlink" href="#struct-scandit.datacapture.core.Size2" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class Size2</code></pre><dl class="method">
+<dt id="method-scandit.datacapture.core.Size2.Size2">
+<code class="descname">Size2()</code><a class="headerlink" href="#method-scandit.datacapture.core.Size2.Size2" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">Size2</code>(<code class="docutils literal notranslate"><span class="pre">float</span></code> <em>width</em>,
+        <code class="docutils literal notranslate"><span class="pre">float</span></code> <em>height</em>)</pre><p>Construct a new Size2 instance.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Size2.Width">
+<code class="descname">width</code><a class="headerlink" href="#property-scandit.datacapture.core.Size2.Width" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">getWidth</code>()
+</pre><p>The width.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Size2.Height">
+<code class="descname">height</code><a class="headerlink" href="#property-scandit.datacapture.core.Size2.Height" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">getHeight</code>()
+</pre><p>The height.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.SizeWithUnit">
+<code class="descname">SizeWithUnit</code><a class="headerlink" href="#struct-scandit.datacapture.core.SizeWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class SizeWithUnit</code></pre><dl class="method">
+<dt id="method-scandit.datacapture.core.SizeWithUnit.SizeWithUnit">
+<code class="descname">SizeWithUnit()</code><a class="headerlink" href="#method-scandit.datacapture.core.SizeWithUnit.SizeWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">SizeWithUnit</code>(&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>width</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>height</em>)</pre><p>Construct a new size with unit.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.SizeWithUnit.Width">
+<code class="descname">width</code><a class="headerlink" href="#property-scandit.datacapture.core.SizeWithUnit.Width" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getWidth</code>()
+</pre><p>The width.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.SizeWithUnit.Height">
+<code class="descname">height</code><a class="headerlink" href="#property-scandit.datacapture.core.SizeWithUnit.Height" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getHeight</code>()
+</pre><p>The height.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.SizeWithAspect">
+<code class="descname">SizeWithAspect</code><a class="headerlink" href="#struct-scandit.datacapture.core.SizeWithAspect" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class SizeWithAspect</code></pre><p>Holds values to define a rectangular size using a dimension and an aspect ratio multiplier.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.SizeWithAspect.SizeWithAspect">
+<code class="descname">SizeWithAspect()</code><a class="headerlink" href="#method-scandit.datacapture.core.SizeWithAspect.SizeWithAspect" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">SizeWithAspect</code>(&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>size</em>,
+        <code class="docutils literal notranslate"><span class="pre">float</span></code> <em>aspect</em>)</pre><p>Construct a new size with aspect.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.SizeWithAspect.Size">
+<code class="descname">size</code><a class="headerlink" href="#property-scandit.datacapture.core.SizeWithAspect.Size" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getSize</code>()
+</pre><p>The size of one dimension.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.SizeWithAspect.Aspect">
+<code class="descname">aspect</code><a class="headerlink" href="#property-scandit.datacapture.core.SizeWithAspect.Aspect" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">getAspect</code>()
+</pre><p>The aspect ratio for the other dimension.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="enum">
+<dt id="enum-scandit.datacapture.core.SizingMode">
+<code class="descname">SizingMode</code><a class="headerlink" href="#enum-scandit.datacapture.core.SizingMode" title="Permalink to this definition">#</a></dt>
+<dd><p>An enumeration of possible ways to define a rectangular size.</p>
+<dl class="value">
+<dt id="value-scandit.datacapture.core.SizingMode.WidthAndHeight">
+<code class="descname">WIDTH_AND_HEIGHT</code><a class="headerlink" href="#value-scandit.datacapture.core.SizingMode.WidthAndHeight" title="Permalink to this definition">#</a></dt>
+<dd><p>This value will use a <a class="reference internal" href="#struct-scandit.datacapture.core.SizeWithUnit" title="SizeWithUnit struct">SizeWithUnit</a> to determine width and the height.</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.SizingMode.WidthAndAspectRatio">
+<code class="descname">WIDTH_AND_ASPECT_RATIO</code><a class="headerlink" href="#value-scandit.datacapture.core.SizingMode.WidthAndAspectRatio" title="Permalink to this definition">#</a></dt>
+<dd><p>This value will use a <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> to determine the width and a float multiplier to determine the height.</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.SizingMode.HeightAndAspectRatio">
+<code class="descname">HEIGHT_AND_ASPECT_RATIO</code><a class="headerlink" href="#value-scandit.datacapture.core.SizingMode.HeightAndAspectRatio" title="Permalink to this definition">#</a></dt>
+<dd><p>This value will use a <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> to determine the height and a float multiplier to determine the width.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="class-scandit.datacapture.core.SizeWithUnitAndAspect">
+<code class="descname">SizeWithUnitAndAspect</code><a class="headerlink" href="#class-scandit.datacapture.core.SizeWithUnitAndAspect" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class SizeWithUnitAndAspect</code></pre><p>Holds a <a class="reference internal" href="#enum-scandit.datacapture.core.SizingMode" title="SizingMode enum">SizingMode</a> - and corresponding required values - to define a rectangular size.</p>
+<dl class="property">
+<dt id="property-scandit.datacapture.core.SizeWithUnitAndAspect.WidthAndHeight">
+<code class="descname">widthAndHeight</code><a class="headerlink" href="#property-scandit.datacapture.core.SizeWithUnitAndAspect.WidthAndHeight" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;Nullable <a class="reference internal" href="#struct-scandit.datacapture.core.SizeWithUnit" title="SizeWithUnit struct">SizeWithUnit</a> <code class="descname">getWidthAndHeight</code>()
+</pre><p>The values for width and height.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value will always be <em>null</em> unless <a class="reference internal" href="#property-scandit.datacapture.core.SizeWithUnitAndAspect.SizingMode" title="sizingMode property">sizingMode</a> is <a class="reference internal" href="#value-scandit.datacapture.core.SizingMode.WidthAndHeight" title="SizingMode.WIDTH_AND_HEIGHT value">SizingMode.WIDTH_AND_HEIGHT</a>.</p>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.SizeWithUnitAndAspect.WidthAndAspectRatio">
+<code class="descname">widthAndAspectRatio</code><a class="headerlink" href="#property-scandit.datacapture.core.SizeWithUnitAndAspect.WidthAndAspectRatio" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;Nullable <a class="reference internal" href="#struct-scandit.datacapture.core.SizeWithAspect" title="SizeWithAspect struct">SizeWithAspect</a> <code class="descname">getWidthAndAspectRatio</code>()
+</pre><p>The value for width and the aspect ratio for height.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value will always be <em>null</em> unless <a class="reference internal" href="#property-scandit.datacapture.core.SizeWithUnitAndAspect.SizingMode" title="sizingMode property">sizingMode</a> is <a class="reference internal" href="#value-scandit.datacapture.core.SizingMode.WidthAndAspectRatio" title="SizingMode.WIDTH_AND_ASPECT_RATIO value">SizingMode.WIDTH_AND_ASPECT_RATIO</a>.</p>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.SizeWithUnitAndAspect.HeightAndAspectRatio">
+<code class="descname">heightAndAspectRatio</code><a class="headerlink" href="#property-scandit.datacapture.core.SizeWithUnitAndAspect.HeightAndAspectRatio" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;Nullable <a class="reference internal" href="#struct-scandit.datacapture.core.SizeWithAspect" title="SizeWithAspect struct">SizeWithAspect</a> <code class="descname">getHeightAndAspectRatio</code>()
+</pre><p>The value for height and the aspect ratio for width.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value will always be <em>null</em> unless :prop`SizeWithUnitAndAspect.SizingMode` is <a class="reference internal" href="#value-scandit.datacapture.core.SizingMode.HeightAndAspectRatio" title="SizingMode.HEIGHT_AND_ASPECT_RATIO value">SizingMode.HEIGHT_AND_ASPECT_RATIO</a>.</p>
+</div>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.SizeWithUnitAndAspect.SizingMode">
+<code class="descname">sizingMode</code><a class="headerlink" href="#property-scandit.datacapture.core.SizeWithUnitAndAspect.SizingMode" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><a class="reference internal" href="#enum-scandit.datacapture.core.SizingMode" title="SizingMode enum">SizingMode</a> <code class="descname">getSizingMode</code>()
+</pre><p>The sizing mode.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.FloatWithUnit">
+<code class="descname">FloatWithUnit</code><a class="headerlink" href="#struct-scandit.datacapture.core.FloatWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class FloatWithUnit</code></pre><p>Holds a floating-point value plus a measure unit.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.FloatWithUnit.FloatWithUnit">
+<code class="descname">FloatWithUnit()</code><a class="headerlink" href="#method-scandit.datacapture.core.FloatWithUnit.FloatWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">FloatWithUnit</code>(<code class="docutils literal notranslate"><span class="pre">float</span></code> <em>value</em>,
+        <a class="reference internal" href="#enum-scandit.datacapture.core.MeasureUnit" title="MeasureUnit enum">MeasureUnit</a> <em>unit</em>)</pre><p>Construct a new float with unit.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.FloatWithUnit.Value">
+<code class="descname">value</code><a class="headerlink" href="#property-scandit.datacapture.core.FloatWithUnit.Value" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">getValue</code>()
+</pre></dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.FloatWithUnit.Unit">
+<code class="descname">unit</code><a class="headerlink" href="#property-scandit.datacapture.core.FloatWithUnit.Unit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><a class="reference internal" href="#enum-scandit.datacapture.core.MeasureUnit" title="MeasureUnit enum">MeasureUnit</a> <code class="descname">getUnit</code>()
+</pre></dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.MarginsWithUnit">
+<code class="descname">MarginsWithUnit</code><a class="headerlink" href="#struct-scandit.datacapture.core.MarginsWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class MarginsWithUnit</code></pre><p>Holds margin values (left, top, right, bottom) that can each be expressed with a different measure unit.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.MarginsWithUnit.MarginsWithUnit">
+<code class="descname">MarginsWithUnit()</code><a class="headerlink" href="#method-scandit.datacapture.core.MarginsWithUnit.MarginsWithUnit" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">MarginsWithUnit</code>(&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>left</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>top</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>right</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <em>bottom</em>)</pre><p>Construct a new MarginsWithUnit instance.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.MarginsWithUnit.Left">
+<code class="descname">left</code><a class="headerlink" href="#property-scandit.datacapture.core.MarginsWithUnit.Left" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getLeft</code>()
+</pre><p>Left margin.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.MarginsWithUnit.Right">
+<code class="descname">right</code><a class="headerlink" href="#property-scandit.datacapture.core.MarginsWithUnit.Right" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getRight</code>()
+</pre><p>Right margin.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.MarginsWithUnit.Top">
+<code class="descname">top</code><a class="headerlink" href="#property-scandit.datacapture.core.MarginsWithUnit.Top" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getTop</code>()
+</pre><p>Top margin.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.MarginsWithUnit.Bottom">
+<code class="descname">bottom</code><a class="headerlink" href="#property-scandit.datacapture.core.MarginsWithUnit.Bottom" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.FloatWithUnit" title="FloatWithUnit struct">FloatWithUnit</a> <code class="descname">getBottom</code>()
+</pre><p>Bottom margin.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="struct">
+<dt id="struct-scandit.datacapture.core.Quadrilateral">
+<code class="descname">Quadrilateral</code><a class="headerlink" href="#struct-scandit.datacapture.core.Quadrilateral" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class Quadrilateral</code></pre><p>Polygon represented by 4 corners.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.Quadrilateral.Quadrilateral">
+<code class="descname">Quadrilateral()</code><a class="headerlink" href="#method-scandit.datacapture.core.Quadrilateral.Quadrilateral" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">Quadrilateral</code>(&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <em>topLeft</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <em>topRight</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <em>bottomRight</em>,
+        &#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <em>bottomLeft</em>)</pre><p>Construct a new Quadrilateral instance.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Quadrilateral.TopLeft">
+<code class="descname">topLeft</code><a class="headerlink" href="#property-scandit.datacapture.core.Quadrilateral.TopLeft" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <code class="descname">getTopLeft</code>()
+</pre></dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Quadrilateral.TopRight">
+<code class="descname">topRight</code><a class="headerlink" href="#property-scandit.datacapture.core.Quadrilateral.TopRight" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <code class="descname">getTopRight</code>()
+</pre></dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Quadrilateral.BottomRight">
+<code class="descname">bottomRight</code><a class="headerlink" href="#property-scandit.datacapture.core.Quadrilateral.BottomRight" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <code class="descname">getBottomRight</code>()
+</pre></dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.Quadrilateral.BottomLeft">
+<code class="descname">bottomLeft</code><a class="headerlink" href="#property-scandit.datacapture.core.Quadrilateral.BottomLeft" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#struct-scandit.datacapture.core.Point" title="Point struct">Point</a> <code class="descname">getBottomLeft</code>()
+</pre></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="class-scandit.datacapture.core.TimeInterval">
+<code class="descname">TimeInterval</code><a class="headerlink" href="#class-scandit.datacapture.core.TimeInterval" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class TimeInterval</code></pre><p>Represents a duration/time interval.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.TimeInterval.Millis">
+<code class="descname">millis()</code><a class="headerlink" href="#method-scandit.datacapture.core.TimeInterval.Millis" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">static &#64;NonNull <a class="reference internal" href="#class-scandit.datacapture.core.TimeInterval" title="TimeInterval class">TimeInterval</a> <code class="descname">millis</code>(<code class="docutils literal notranslate"><span class="pre">long</span></code> <em>value</em>)</pre><p>Returns a new time interval from the provided duration in milliseconds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="method-scandit.datacapture.core.TimeInterval.Seconds">
+<code class="descname">seconds()</code><a class="headerlink" href="#method-scandit.datacapture.core.TimeInterval.Seconds" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">static &#64;NonNull <a class="reference internal" href="#class-scandit.datacapture.core.TimeInterval" title="TimeInterval class">TimeInterval</a> <code class="descname">seconds</code>(<code class="docutils literal notranslate"><span class="pre">float</span></code> <em>value</em>)</pre><p>Returns a new time interval from the provided duration in seconds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="method-scandit.datacapture.core.TimeInterval.AsSeconds">
+<code class="descname">asSeconds()</code><a class="headerlink" href="#method-scandit.datacapture.core.TimeInterval.AsSeconds" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">asSeconds</code>()</pre><p>Returns the duration in seconds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="method-scandit.datacapture.core.TimeInterval.AsMillis">
+<code class="descname">asMillis()</code><a class="headerlink" href="#method-scandit.datacapture.core.TimeInterval.AsMillis" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">long</span></code> <code class="descname">asMillis</code>()</pre><p>Returns the duration in milliseconds</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scandit AG
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-23556890-7', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

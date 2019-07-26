@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Camera Settings &mdash; Data Capture SDK 6.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'6.0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Common Data Structures" href="common.html" />
+    <link rel="prev" title="Camera" href="camera.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Data Capture SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../run-samples.html">Run our Sample Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add-sdk.html">Add the SDK to Your App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Barcode Scanning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started-barcode.html">Get Started With Barcode Scanning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scan-area.html">Set up the Active Scan Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui-examples.html">Choose the Scanner UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configure-barcodes.html">Configure Which Barcodes Are Read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../barcode-symbologies.html">Barcode Symbologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimize-performance.html">Optimize Scanning Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MatrixScan + Augmented Reality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started-matrixscan.html">Get Started With MatrixScan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add-augmented-reality-overlay.html">Add AR Overlays in MatrixScan</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data Capture SDK in Detail</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../core-concepts.html">Core Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">ScanditCaptureCore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../serialization.html">Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anchor.html">Anchor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html">Camera</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Camera Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">Common Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context-status.html">Context Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context.html">Data Capture Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context-frame-listener.html">Data Capture Context Frame Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context-listener.html">Data Capture Context Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-mode.html">Data Capture Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="direction.html">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback.html">Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame-data.html">Frame Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame-source.html">Frame Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame-source-listener.html">Frame Source Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laserline-viewfinder.html">Laserline Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location-selection.html">Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radius-location-selection.html">Radius Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangular-location-selection.html">Rectangular Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangular-viewfinder.html">Rectangular Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spotlight-viewfinder.html">Spotlight Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewfinder.html">Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/brush.html">Brush</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/control.html">Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-overlay.html">Data Capture Overlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-view.html">Data Capture View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-view-listener.html">Data Capture View Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/torch-switch-control.html">Torch Switch Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#camera-and-frame-sources">Camera and Frame Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#context-and-capture-modes">Context and Capture Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#location-selection">Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#user-interface">User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#misc-data-structures">Misc Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../barcode-capture/api.html">ScanditBarcodeCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../label-capture/api.html">ScanditLabelCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support &amp; FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ssl.scandit.com/terms/specifications.pdf">Barcode Scanner Requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scandit.com/barcode-scanner-sdk.html">SDK 5.x Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrate-to-6.html">Migrate from Barcode Scanner 5.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://ssl.scandit.com">Dashboard</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data Capture SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">ScanditCaptureCore</a> &raquo;</li>
+        
+      <li>Camera Settings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="camera-settings">
+<h1>Camera Settings<a class="headerlink" href="#camera-settings" title="Permalink to this headline">#</a></h1>
+<p>Defined in package <em>com.scandit.datacapture.core.source</em></p>
+<dl class="class">
+<dt id="class-scandit.datacapture.core.CameraSettings">
+<code class="descname">CameraSettings</code><a class="headerlink" href="#class-scandit.datacapture.core.CameraSettings" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class CameraSettings</code></pre><p>Holds camera-specific settings such as preferred resolution, maximum frame rate etc. The defaults are chosen such that they work for a wide variety of use-cases. You may apply custom settings to further optimize scan performance for your particular use-case. There is typically no need to customize the camera settings beyond changing the <a class="reference internal" href="#property-scandit.datacapture.core.CameraSettings.PreferredResolution" title="preferred resolution property">preferred resolution</a>.</p>
+<p>For best performance use the camera settings returned by the capture mode you are using, e.g. <a class="reference internal" href="../../barcode-capture/api/barcode-capture.html#method-scandit.datacapture.barcode.BarcodeCapture.CreateRecommendedCameraSettings" title="BarcodeCapture.createRecommendedCameraSettings() method">BarcodeCapture.createRecommendedCameraSettings()</a>, or <a class="reference internal" href="../../barcode-capture/api/barcode-tracking.html#method-scandit.datacapture.barcode.tracking.BarcodeTracking.CreateRecommendedCameraSettings" title="BarcodeTracking.createRecommendedCameraSettings() method">BarcodeTracking.createRecommendedCameraSettings()</a>.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.CameraSettings.CameraSettings">
+<code class="descname">CameraSettings()</code><a class="headerlink" href="#method-scandit.datacapture.core.CameraSettings.CameraSettings" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">CameraSettings</code>()</pre><p>Create new default camera settings. <a class="reference internal" href="#property-scandit.datacapture.core.CameraSettings.MaxFrameRate" title="maxFrameRate property">maxFrameRate</a> is set to 30, <a class="reference internal" href="#property-scandit.datacapture.core.CameraSettings.ZoomFactor" title="zoomFactor property">zoomFactor</a> is set to 1 and <a class="reference internal" href="#property-scandit.datacapture.core.CameraSettings.PreferredResolution" title="preferredResolution property">preferredResolution</a> is set to <a class="reference internal" href="#value-scandit.datacapture.core.VideoResolution.Auto" title="VideoResolution.AUTO value">VideoResolution.AUTO</a>.</p>
+</dd></dl>
+
+<p>Holds camera related settings such as preview resolution and maximum frame rate to use.</p>
+<dl class="property">
+<dt id="property-scandit.datacapture.core.CameraSettings.PreferredResolution">
+<code class="descname">preferredResolution</code><a class="headerlink" href="#property-scandit.datacapture.core.CameraSettings.PreferredResolution" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><a class="reference internal" href="#enum-scandit.datacapture.core.VideoResolution" title="VideoResolution enum">VideoResolution</a> <code class="descname">getPreferredResolution</code>()
+<code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">setPreferredResolution</code>(<a class="reference internal" href="#enum-scandit.datacapture.core.VideoResolution" title="VideoResolution enum">VideoResolution</a> <em>value</em>)
+</pre><p>The preferred resolution to use for the camera. The camera will use the resolution that is closests to the resolution preference. For example, if only lower resolutions than the preferred resolution are available, the highest available resolution will be used.</p>
+<p>The default value is <a class="reference internal" href="#value-scandit.datacapture.core.VideoResolution.Auto" title="VideoResolution.AUTO value">VideoResolution.AUTO</a>.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.CameraSettings.MaxFrameRate">
+<code class="descname">maxFrameRate</code><a class="headerlink" href="#property-scandit.datacapture.core.CameraSettings.MaxFrameRate" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">getMaxFrameRate</code>()
+<code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">setMaxFrameRate</code>(<code class="docutils literal notranslate"><span class="pre">float</span></code> <em>value</em>)
+</pre><p>The maximum frame rate to use for the camera. The actual maximum framerate will be the mimumum of the maximally available frame rate of the camera and the provided value.</p>
+<p>The default max frame rate is 30 Hz.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.CameraSettings.ZoomFactor">
+<code class="descname">zoomFactor</code><a class="headerlink" href="#property-scandit.datacapture.core.CameraSettings.ZoomFactor" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">float</span></code> <code class="descname">getZoomFactor</code>()
+<code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">setZoomFactor</code>(<code class="docutils literal notranslate"><span class="pre">float</span></code> <em>value</em>)
+</pre><p>The zoom factor to use for the camera. This value is a multiplier, a value of <cite>1.0</cite> means no zoom, while a value of <cite>2.0</cite> doubles the size of the image, but halves the field of view.</p>
+<p>Values less than 1.0 are treated as 1.0. Values greater than the maximum available zoom factor are clamped to the maximum accepted value.</p>
+<p>If the zoom factor should not change, CurrentZoomFactor should be used.</p>
+<p>The default zoom factor is 1.0.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.CameraSettings.ShouldPreferSmoothAutoFocus">
+<code class="descname">shouldPreferSmoothAutoFocus</code><a class="headerlink" href="#property-scandit.datacapture.core.CameraSettings.ShouldPreferSmoothAutoFocus" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">boolean</span></code> <code class="descname">getShouldPreferSmoothAutoFocus</code>()
+<code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">setShouldPreferSmoothAutoFocus</code>(<code class="docutils literal notranslate"><span class="pre">boolean</span></code> <em>value</em>)
+</pre><p>Whether to prefer smooth auto-focus. The default settings have this turned off. Enable it to switch to a smoother (but potentially less reliable) auto-focus strategy. For some devices, this property has no effect.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="enum">
+<dt id="enum-scandit.datacapture.core.CameraPosition">
+<code class="descname">CameraPosition</code><a class="headerlink" href="#enum-scandit.datacapture.core.CameraPosition" title="Permalink to this definition">#</a></dt>
+<dd><dl class="value">
+<dt id="value-scandit.datacapture.core.CameraPosition.WorldFacing">
+<code class="descname">WORLD_FACING</code><a class="headerlink" href="#value-scandit.datacapture.core.CameraPosition.WorldFacing" title="Permalink to this definition">#</a></dt>
+<dd><p>The camera is attached at the back of the device and is facing away from the user</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.CameraPosition.UserFacing">
+<code class="descname">USER_FACING</code><a class="headerlink" href="#value-scandit.datacapture.core.CameraPosition.UserFacing" title="Permalink to this definition">#</a></dt>
+<dd><p>The camera is attached on the front of the device and facing towards the user.</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.CameraPosition.Unspecified">
+<code class="descname">UNSPECIFIED</code><a class="headerlink" href="#value-scandit.datacapture.core.CameraPosition.Unspecified" title="Permalink to this definition">#</a></dt>
+<dd><p>The camera position is unspecified.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="enum">
+<dt id="enum-scandit.datacapture.core.VideoResolution">
+<code class="descname">VideoResolution</code><a class="headerlink" href="#enum-scandit.datacapture.core.VideoResolution" title="Permalink to this definition">#</a></dt>
+<dd><dl class="value">
+<dt id="value-scandit.datacapture.core.VideoResolution.Hd">
+<code class="descname">HD</code><a class="headerlink" href="#value-scandit.datacapture.core.VideoResolution.Hd" title="Permalink to this definition">#</a></dt>
+<dd><p>Resolution is 1280x720</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.VideoResolution.FullHd">
+<code class="descname">FULL_HD</code><a class="headerlink" href="#value-scandit.datacapture.core.VideoResolution.FullHd" title="Permalink to this definition">#</a></dt>
+<dd><p>Resolution is 1920x1080</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.VideoResolution.Uhd4k">
+<code class="descname">UHD4K</code><a class="headerlink" href="#value-scandit.datacapture.core.VideoResolution.Uhd4k" title="Permalink to this definition">#</a></dt>
+<dd><p>Resolution is 3840x2160</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.VideoResolution.Auto">
+<code class="descname">AUTO</code><a class="headerlink" href="#value-scandit.datacapture.core.VideoResolution.Auto" title="Permalink to this definition">#</a></dt>
+<dd><p>In contrast to <a class="reference internal" href="#value-scandit.datacapture.core.VideoResolution.FullHd" title="FULL_HD value">FULL_HD</a>, and <a class="reference internal" href="#value-scandit.datacapture.core.VideoResolution.Hd" title="HD value">HD</a>, <a class="reference internal" href="#value-scandit.datacapture.core.VideoResolution.Auto" title="AUTO value">AUTO</a> will select the resolution based on hardware capabilities and/or scan-performance considerations. The chosen resolution may change in future versions of the software.</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.VideoResolution.Highest">
+<code class="descname">HIGHEST</code><a class="headerlink" href="#value-scandit.datacapture.core.VideoResolution.Highest" title="Permalink to this definition">#</a></dt>
+<dd><p>The highest available video resolution on the device. Use with caution, as this video resolution can slow down processing substantially.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scandit AG
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-23556890-7', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

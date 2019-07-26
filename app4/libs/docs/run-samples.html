@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Run our Sample Apps &mdash; Data Capture SDK 6.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'6.0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Add the SDK to Your App" href="add-sdk.html" />
+    <link rel="prev" title="Scandit Data Capture SDK Documentation for Android" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Data Capture SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">First Steps</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run our Sample Apps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#available-samples">Available Samples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#barcode-capture-samples">Barcode Capture Samples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#matrixscan-samples">MatrixScan Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-samples">Run the Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="add-sdk.html">Add the SDK to Your App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Barcode Scanning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get-started-barcode.html">Get Started With Barcode Scanning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scan-area.html">Set up the Active Scan Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui-examples.html">Choose the Scanner UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure-barcodes.html">Configure Which Barcodes Are Read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="barcode-symbologies.html">Barcode Symbologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimize-performance.html">Optimize Scanning Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MatrixScan + Augmented Reality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get-started-matrixscan.html">Get Started With MatrixScan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-augmented-reality-overlay.html">Add AR Overlays in MatrixScan</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data Capture SDK in Detail</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core-concepts.html">Core Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core/api.html">ScanditCaptureCore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="barcode-capture/api.html">ScanditBarcodeCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label-capture/api.html">ScanditLabelCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support &amp; FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ssl.scandit.com/terms/specifications.pdf">Barcode Scanner Requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scandit.com/barcode-scanner-sdk.html">SDK 5.x Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrate-to-6.html">Migrate from Barcode Scanner 5.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://ssl.scandit.com">Dashboard</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Data Capture SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Run our Sample Apps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="run-our-sample-apps">
+<h1>Run our Sample Apps<a class="headerlink" href="#run-our-sample-apps" title="Permalink to this headline">#</a></h1>
+<p>The best way to start working with the Scandit Data Capture SDK is to run one of our sample apps. In this guide we will go through the available apps and how to run them with <a class="reference external" href="https://developer.android.com/studio/">Android Studio</a> or <a class="reference external" href="https://www.jetbrains.com/help/idea/android-support-overview.html">IntelliJ IDEA with the official Android Plugin</a>.</p>
+<div class="section" id="available-samples">
+<span id="id1"></span><h2>Available Samples<a class="headerlink" href="#available-samples" title="Permalink to this headline">#</a></h2>
+<p>We have created both simple and advanced samples that show you how to capture barcodes and how to use MatrixScan functionality.
+The simple samples allow you to get going quickly, while the advanced samples show you how to use additional settings and setup the scanner for the best user experience.</p>
+<div class="section" id="barcode-capture-samples">
+<h3>Barcode Capture Samples<a class="headerlink" href="#barcode-capture-samples" title="Permalink to this headline">#</a></h3>
+<table border="1" class="colwidths-given docutils align-center">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Simple Sample</td>
+<td>View Sample</td>
+<td>Settings Sample</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center">
+<img alt="_images/sample-bc-simple.png" src="_images/sample-bc-simple.png" />
+</div>
+</td>
+<td><div class="first figure align-center">
+<img alt="_images/sample-bc-view-1.png" src="_images/sample-bc-view-1.png" />
+</div>
+<div class="last figure align-center">
+<img alt="_images/sample-bc-view-2.png" src="_images/sample-bc-view-2.png" />
+</div>
+</td>
+<td><div class="first figure align-center">
+<img alt="_images/sample-bc-settings-1.png" src="_images/sample-bc-settings-1.png" />
+</div>
+<div class="last figure align-center">
+<img alt="_images/sample-bc-settings-2.png" src="_images/sample-bc-settings-2.png" />
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Basic sample that uses the camera to read a single barcode.</td>
+<td>Demonstrates the various ways to best integrate the scanner into the UI of your app.</td>
+<td>Demonstrates how you can adapt the scanner settings best to your needs and experiment with all the options.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="matrixscan-samples">
+<h3>MatrixScan Samples<a class="headerlink" href="#matrixscan-samples" title="Permalink to this headline">#</a></h3>
+<table border="1" class="colwidths-given docutils align-center">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Reject Sample</td>
+<td>Bubble Sample</td>
+<td>Search And Find Sample</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center">
+<img alt="_images/sample-ms-simple.png" src="_images/sample-ms-simple.png" />
+</div>
+</td>
+<td><div class="first last figure align-center">
+<img alt="_images/sample-ms-bubble.png" src="_images/sample-ms-bubble.png" />
+</div>
+</td>
+<td><div class="first figure align-center">
+<img alt="_images/sample-ms-saf-1.png" src="_images/sample-ms-saf-1.png" />
+</div>
+<div class="last figure align-center">
+<img alt="_images/sample-ms-saf-2.png" src="_images/sample-ms-saf-2.png" />
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Sample which shows how you can highlight selected (by a custom condition) barcodes on screen and scan them with the Scandit Data Capture SDK.</td>
+<td>Demonstrates the use of more advanced augmented reality use cases with the Scandit Data Capture SDK.</td>
+<td>Demonstrates a use case that requires a consecutive use of both Barcode Capture and MatrixScan in a single app.</td>
+</tr>
+</tbody>
+</table>
+<p>All our samples can be found in the archive that can be downloaded from our dashboard. Check the following section for more details.</p>
+</div>
+</div>
+<div class="section" id="run-the-samples">
+<h2>Run the Samples<a class="headerlink" href="#run-the-samples" title="Permalink to this headline">#</a></h2>
+<p>Before you can run a sample app, you need to go through a few simple steps:</p>
+<ol class="arabic simple">
+<li>Sign in to your Scandit account and download the newest Android library at <a class="reference external" href="https://ssl.scandit.com/sdk">ssl.scandit.com/sdk</a>. Unzip the archive and go to the <cite>samples</cite> directory.</li>
+<li>Open the <cite>samples</cite> directory as a project in Android Studio or IntelliJ IDEA. Make sure you always have the most recent version of Android Studio or IntelliJ IDEA and the Android plugin installed.</li>
+<li>Set the license key. To do this, sign in to your Scandit account and find your license key at <a class="reference external" href="https://ssl.scandit.com/licenses/">ssl.scandit.com/licenses</a>.</li>
+</ol>
+<blockquote>
+<div><p>Once you have the license key, add it to the sample:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Enter your Scandit SDK License key here.</span>
+<span class="c1">// Your Scandit SDK License key is available via your Scandit SDK web account.</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">SCANDIT_LICENSE_KEY</span> <span class="o">=</span> <span class="s">&quot;-- ENTER YOUR SCANDIT LICENSE KEY HERE --&quot;</span><span class="o">;</span>
+</pre></div>
+</div>
+<p><cite>SCANDIT_LICENSE_KEY</cite> variables are placed in each sample project Activity class.</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Run the sample in Android Studio or IntelliJ IDEA by selecting a run configuration and pressing the Run button. We recommend running our samples on a physical device as otherwise no camera is available.</li>
+</ol>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<p>You are now ready to tackle the following guide:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="add-sdk.html"><span class="doc">Add the SDK to Your App</span></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scandit AG
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-23556890-7', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

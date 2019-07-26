@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Barcode Tracking Basic Overlay &mdash; Data Capture SDK 6.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../../',
+              VERSION:'6.0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Barcode Tracking Basic Overlay Listener" href="barcode-tracking-basic-overlay-listener.html" />
+    <link rel="prev" title="Barcode Tracking Advanced Overlay Listener" href="barcode-tracking-advanced-overlay-listener.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Data Capture SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../run-samples.html">Run our Sample Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../add-sdk.html">Add the SDK to Your App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Barcode Scanning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../get-started-barcode.html">Get Started With Barcode Scanning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scan-area.html">Set up the Active Scan Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ui-examples.html">Choose the Scanner UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configure-barcodes.html">Configure Which Barcodes Are Read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../barcode-symbologies.html">Barcode Symbologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../optimize-performance.html">Optimize Scanning Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MatrixScan + Augmented Reality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../get-started-matrixscan.html">Get Started With MatrixScan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../add-augmented-reality-overlay.html">Add AR Overlays in MatrixScan</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data Capture SDK in Detail</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../core-concepts.html">Core Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/api.html">ScanditCaptureCore</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">ScanditBarcodeCapture</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../barcode.html">Barcode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-capture.html">Barcode Capture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-capture-feedback.html">Barcode Capture Feedback</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-capture-listener.html">Barcode Capture Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-capture-session.html">Barcode Capture Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-capture-settings.html">Barcode Capture Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-tracking.html">Barcode Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-tracking-listener.html">Barcode Tracking Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-tracking-session.html">Barcode Tracking Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../barcode-tracking-settings.html">Barcode Tracking Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../checksum.html">Checksum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../composite-flag.html">Composite Flag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../localized-only-barcode.html">Localized Only Barcode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbology.html">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbology-description.html">Symbology Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbology-settings.html">Symbology Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tracked-barcode.html">Tracked Barcode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barcode-capture-overlay.html">Barcode Capture Overlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barcode-tracking-advanced-overlay.html">Barcode Tracking Advanced Overlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barcode-tracking-advanced-overlay-listener.html">Barcode Tracking Advanced Overlay Listener</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Barcode Tracking Basic Overlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barcode-tracking-basic-overlay-listener.html">Barcode Tracking Basic Overlay Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#classes-interfaces-and-enumerations">Classes/Interfaces and Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../label-capture/api.html">ScanditLabelCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Support &amp; FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ssl.scandit.com/terms/specifications.pdf">Barcode Scanner Requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scandit.com/barcode-scanner-sdk.html">SDK 5.x Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../migrate-to-6.html">Migrate from Barcode Scanner 5.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://ssl.scandit.com">Dashboard</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Data Capture SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../api.html">ScanditBarcodeCapture</a> &raquo;</li>
+        
+      <li>Barcode Tracking Basic Overlay</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="barcode-tracking-basic-overlay">
+<h1>Barcode Tracking Basic Overlay<a class="headerlink" href="#barcode-tracking-basic-overlay" title="Permalink to this headline">#</a></h1>
+<p>Defined in package <em>com.scandit.datacapture.barcode.tracking.ui.overlay</em></p>
+<dl class="class">
+<dt id="class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay">
+<code class="descname">BarcodeTrackingBasicOverlay</code><a class="headerlink" href="#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class BarcodeTrackingBasicOverlay</code> : <a class="reference internal" href="../../../core/api/ui/data-capture-overlay.html#interface-scandit.datacapture.core.ui.IDataCaptureOverlay" title="DataCaptureOverlay interface">DataCaptureOverlay</a></pre><dl class="method">
+<dt id="method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.NewInstance">
+<code class="descname">newInstance()</code><a class="headerlink" href="#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.NewInstance" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">static &#64;NonNull <a class="reference internal" href="#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay" title="BarcodeTrackingBasicOverlay class">BarcodeTrackingBasicOverlay</a> <code class="descname">newInstance</code>(
+        &#64;NonNull <a class="reference internal" href="../barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking" title="BarcodeTracking class">BarcodeTracking</a> <em>barcodeTracking</em>,
+        &#64;Nullable <a class="reference internal" href="../../../core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView" title="DataCaptureView class">DataCaptureView</a> <em>view</em>)</pre><p>Construct a new barcode tracking basic overlay for the barcode tracking instance. The overlay is automatically added to the view.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.FromJson">
+<code class="descname">fromJson()</code><a class="headerlink" href="#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.FromJson" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">static &#64;NonNull <a class="reference internal" href="#class-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay" title="BarcodeTrackingBasicOverlay class">BarcodeTrackingBasicOverlay</a> <code class="descname">fromJson</code>(
+        &#64;NonNull <a class="reference internal" href="../barcode-tracking.html#class-scandit.datacapture.barcode.tracking.BarcodeTracking" title="BarcodeTracking class">BarcodeTracking</a> <em>mode</em>,
+        &#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/lang/String.html" title="String">String</a> <em>jsonData</em>)</pre><p>Construct a new barcode tracking basic overlay with the provided JSON serialization. See <a class="reference internal" href="../../../core/serialization.html"><span class="doc">Serialization</span></a> for details. The overlay is automatically added to the capture mode.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.Listener">
+<code class="descname">listener</code><a class="headerlink" href="#property-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.Listener" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;Nullable <a class="reference internal" href="barcode-tracking-basic-overlay-listener.html#interface-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener" title="BarcodeTrackingBasicOverlayListener interface">BarcodeTrackingBasicOverlayListener</a> <code class="descname">getListener</code>()
+<code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">setListener</code>(&#64;Nullable <a class="reference internal" href="barcode-tracking-basic-overlay-listener.html#interface-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener" title="BarcodeTrackingBasicOverlayListener interface">BarcodeTrackingBasicOverlayListener</a> <em>value</em>)
+</pre><p>The delegate which is called whenever a new TrackedBarcode is newly tracked or newly recognized.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.DefaultBrush">
+<code class="descname">defaultBrush</code><a class="headerlink" href="#property-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.DefaultBrush" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;Nullable <a class="reference internal" href="../../../core/api/ui/brush.html#class-scandit.datacapture.core.ui.Brush" title="Brush class">Brush</a> <code class="descname">getDefaultBrush</code>()
+<code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">setDefaultBrush</code>(&#64;Nullable <a class="reference internal" href="../../../core/api/ui/brush.html#class-scandit.datacapture.core.ui.Brush" title="Brush class">Brush</a> <em>value</em>)
+</pre><p>The default brush applied to recognized tracked barcodes. This is the brush used if <a class="reference internal" href="barcode-tracking-basic-overlay-listener.html#interface-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener" title="BarcodeTrackingBasicOverlayListener interface">BarcodeTrackingBasicOverlayListener</a> is not implemented.
+Setting this brush to <em>null</em> hides all tracked barcodes, unless <a class="reference internal" href="#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.SetBrushForTrackedBarcode" title="setBrushForTrackedBarcode() method">setBrushForTrackedBarcode()</a> is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.SetBrushForTrackedBarcode">
+<code class="descname">setBrushForTrackedBarcode()</code><a class="headerlink" href="#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.SetBrushForTrackedBarcode" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">setBrushForTrackedBarcode</code>(&#64;NonNull <a class="reference internal" href="../tracked-barcode.html#class-scandit.datacapture.barcode.tracking.TrackedBarcode" title="TrackedBarcode class">TrackedBarcode</a> <em>trackedBarcode</em>,
+        &#64;Nullable <a class="reference internal" href="../../../core/api/ui/brush.html#class-scandit.datacapture.core.ui.Brush" title="Brush class">Brush</a> <em>brush</em>)</pre><p>The method can be called to change the visualization style of a tracked barcode. This method is thread-safe, it can be called from any thread.
+If the brush is <em>null</em>, then no visualization will be drawn for the tracked barcode. Additionally, tapping on the barcode will have no effect - the action defined by <a class="reference internal" href="barcode-tracking-basic-overlay-listener.html#method-scandit.datacapture.barcode.tracking.ui.IBarcodeTrackingBasicOverlayListener.OnTrackedBarcodeTapped" title="BarcodeTrackingBasicOverlayListener.onTrackedBarcodeTapped() method">BarcodeTrackingBasicOverlayListener.onTrackedBarcodeTapped()</a> callback will not be performed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.ClearTrackedBarcodeBrushes">
+<code class="descname">clearTrackedBarcodeBrushes()</code><a class="headerlink" href="#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.ClearTrackedBarcodeBrushes" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">clearTrackedBarcodeBrushes</code>()</pre><p>Clear all currently displayed visualizations for the tracked barcodes.</p>
+<p>This only applies to the currently tracked barcodes, the visualizations for the new ones will still appear.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.ShouldShowScanAreaGuides">
+<code class="descname">shouldShowScanAreaGuides</code><a class="headerlink" href="#property-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.ShouldShowScanAreaGuides" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">boolean</span></code> <code class="descname">getShouldShowScanAreaGuides</code>()
+<code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">setShouldShowScanAreaGuides</code>(<code class="docutils literal notranslate"><span class="pre">boolean</span></code> <em>value</em>)
+</pre><p>When set to <em>true</em>, this overlay will visualize the active scan area used for BarcodeTracking. This is useful to check <a class="reference internal" href="../../../core/api/ui/data-capture-view.html#property-scandit.datacapture.core.ui.DataCaptureView.ScanAreaMargins" title="margins property">margins</a> defined on the <a class="reference internal" href="../../../core/api/ui/data-capture-view.html#class-scandit.datacapture.core.ui.DataCaptureView" title="DataCaptureView class">DataCaptureView</a> are set correctly. This property is meant for debugging during development and is not intended for use in production.</p>
+<p>By default this property is <em>false</em>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.UpdateFromJson">
+<code class="descname">updateFromJson()</code><a class="headerlink" href="#method-scandit.datacapture.barcode.tracking.ui.BarcodeTrackingBasicOverlay.UpdateFromJson" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">updateFromJson</code>(&#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/lang/String.html" title="String">String</a> <em>jsonData</em>)</pre><p>Updates the overlay according to a JSON serialization. See <a class="reference internal" href="../../../core/serialization.html"><span class="doc">Serialization</span></a> for details.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scandit AG
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-23556890-7', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

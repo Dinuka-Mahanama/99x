@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Frame Data &mdash; Data Capture SDK 6.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../../',
+              VERSION:'6.0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Frame Source" href="frame-source.html" />
+    <link rel="prev" title="Feedback" href="feedback.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Data Capture SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../run-samples.html">Run our Sample Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add-sdk.html">Add the SDK to Your App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Barcode Scanning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started-barcode.html">Get Started With Barcode Scanning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scan-area.html">Set up the Active Scan Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ui-examples.html">Choose the Scanner UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configure-barcodes.html">Configure Which Barcodes Are Read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../barcode-symbologies.html">Barcode Symbologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../optimize-performance.html">Optimize Scanning Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MatrixScan + Augmented Reality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started-matrixscan.html">Get Started With MatrixScan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../add-augmented-reality-overlay.html">Add AR Overlays in MatrixScan</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data Capture SDK in Detail</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../core-concepts.html">Core Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">ScanditCaptureCore</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../serialization.html">Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anchor.html">Anchor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera.html">Camera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="camera-settings.html">Camera Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">Common Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context-status.html">Context Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context.html">Data Capture Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context-frame-listener.html">Data Capture Context Frame Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-context-listener.html">Data Capture Context Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-capture-mode.html">Data Capture Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="direction.html">Direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feedback.html">Feedback</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Frame Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame-source.html">Frame Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frame-source-listener.html">Frame Source Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laserline-viewfinder.html">Laserline Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="location-selection.html">Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="radius-location-selection.html">Radius Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangular-location-selection.html">Rectangular Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangular-viewfinder.html">Rectangular Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spotlight-viewfinder.html">Spotlight Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewfinder.html">Viewfinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/brush.html">Brush</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/control.html">Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-overlay.html">Data Capture Overlay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-view.html">Data Capture View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/data-capture-view-listener.html">Data Capture View Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui/torch-switch-control.html">Torch Switch Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#camera-and-frame-sources">Camera and Frame Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#context-and-capture-modes">Context and Capture Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#location-selection">Location Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#user-interface">User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#misc-data-structures">Misc Data Structures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../barcode-capture/api.html">ScanditBarcodeCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../label-capture/api.html">ScanditLabelCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support &amp; FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ssl.scandit.com/terms/specifications.pdf">Barcode Scanner Requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scandit.com/barcode-scanner-sdk.html">SDK 5.x Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrate-to-6.html">Migrate from Barcode Scanner 5.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://ssl.scandit.com">Dashboard</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data Capture SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">ScanditCaptureCore</a> &raquo;</li>
+        
+      <li>Frame Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="frame-data">
+<h1>Frame Data<a class="headerlink" href="#frame-data" title="Permalink to this headline">#</a></h1>
+<p>Defined in package <em>com.scandit.datacapture.core.data</em></p>
+<dl class="interface">
+<dt id="interface-scandit.datacapture.core.IFrameData">
+<code class="descname">FrameData</code><a class="headerlink" href="#interface-scandit.datacapture.core.IFrameData" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">interface FrameData</code></pre><p>Interface for holding frame data from one or more sources (cameras). The concrete type is tied to the frame source that produces the frames.</p>
+<p>The frame data contains one or more image buffers, each of which may have different sizes. Each frame data is guaranteed to have at least one image buffer. Only frame sources that combine the input of multiple frame sources will have more than one image buffer. The images buffers can have different sizes.</p>
+<p>A frame contains the pixel data as well as layout of one particular frame. Frames are immutable and reference counted, so they can be shared by multiple consumers. The frame is returned to the pool (recycled) when all consumers release the frame.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.IFrameData.Retain">
+<code class="descname">retain()</code><a class="headerlink" href="#method-scandit.datacapture.core.IFrameData.Retain" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">retain</code>()</pre><p>Increments the reference count of the video frame by one. Must be balanced by a matching call to <a class="reference internal" href="#method-scandit.datacapture.core.IFrameData.Release" title="release() method">release()</a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="method-scandit.datacapture.core.IFrameData.Release">
+<code class="descname">release()</code><a class="headerlink" href="#method-scandit.datacapture.core.IFrameData.Release" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">void</span></code> <code class="descname">release</code>()</pre><blockquote>
+<div>Decrement the reference count of the video frame by one. When the reference count drops to zero, the frame is recycled. Must be balanced by a call to <a class="reference internal" href="#method-scandit.datacapture.core.IFrameData.Retain" title="retain() method">retain()</a>.</div></blockquote>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.IFrameData.Orientation">
+<code class="descname">orientation</code><a class="headerlink" href="#property-scandit.datacapture.core.IFrameData.Orientation" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getOrientation</code>()
+</pre><p>The orientation of the image buffer contained in this frame data.
+.. todo:: describe the orientation values</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.IFrameData.ImageBuffer">
+<code class="descname">imageBuffer</code><a class="headerlink" href="#property-scandit.datacapture.core.IFrameData.ImageBuffer" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference internal" href="#class-scandit.datacapture.core.ImageBuffer" title="ImageBuffer class">ImageBuffer</a> <code class="descname">getImageBuffer</code>()
+</pre><p>The image buffer contained in this frame data.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="class-scandit.datacapture.core.ImageBuffer">
+<code class="descname">ImageBuffer</code><a class="headerlink" href="#class-scandit.datacapture.core.ImageBuffer" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class ImageBuffer</code></pre><p>An image buffer consists of one or more <a class="reference internal" href="#class-scandit.datacapture.core.ImagePlane" title="images planes class">images planes</a> that describe how the memory is laid out. Instances of this class don’t own the data, rather the data is owned by another class (typically a <a class="reference internal" href="#interface-scandit.datacapture.core.IFrameData" title="FrameData interface">FrameData</a> instance).</p>
+<blockquote>
+<div><dl class="method">
+<dt id="method-scandit.datacapture.core.ImageBuffer.ImageBuffer">
+<code class="descname">ImageBuffer()</code><a class="headerlink" href="#method-scandit.datacapture.core.ImageBuffer.ImageBuffer" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">ImageBuffer</code>(<code class="docutils literal notranslate"><span class="pre">int</span></code> <em>width</em>,
+        <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>height</em>,
+        &#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/util/ArrayList.html" title="ArrayList">ArrayList</a>&lt;&#64;NonNull <a class="reference internal" href="#class-scandit.datacapture.core.ImagePlane" title="ImagePlane class">ImagePlane</a>&gt; <em>panes</em>)</pre><p>Create new image buffer instance from width, height and panes.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImageBuffer.Width">
+<code class="descname">width</code><a class="headerlink" href="#property-scandit.datacapture.core.ImageBuffer.Width" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getWidth</code>()
+</pre><p>Width of the image buffer in pixels (non-subsampled).</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImageBuffer.Height">
+<code class="descname">height</code><a class="headerlink" href="#property-scandit.datacapture.core.ImageBuffer.Height" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getHeight</code>()
+</pre><p>Height of the image buffer in pixels (non-subsampled).</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImageBuffer.Planes">
+<code class="descname">planes</code><a class="headerlink" href="#property-scandit.datacapture.core.ImageBuffer.Planes" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/util/ArrayList.html" title="ArrayList">ArrayList</a>&lt;&#64;NonNull <a class="reference internal" href="#class-scandit.datacapture.core.ImagePlane" title="ImagePlane class">ImagePlane</a>&gt; <code class="descname">getPlanes</code>()
+</pre><p>List of planes that this image buffer holds. The data used by these image planes may or may not be part of the same block of memory.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="enum">
+<dt id="enum-scandit.datacapture.core.Channel">
+<code class="descname">Channel</code><a class="headerlink" href="#enum-scandit.datacapture.core.Channel" title="Permalink to this definition">#</a></dt>
+<dd><p>Enumeration of possible channel types.</p>
+<dl class="value">
+<dt id="value-scandit.datacapture.core.Channel.Y">
+<code class="descname">Y</code><a class="headerlink" href="#value-scandit.datacapture.core.Channel.Y" title="Permalink to this definition">#</a></dt>
+<dd><p>Luminance (Y) or gray-scale channel</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.Channel.U">
+<code class="descname">U</code><a class="headerlink" href="#value-scandit.datacapture.core.Channel.U" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.Channel.V">
+<code class="descname">V</code><a class="headerlink" href="#value-scandit.datacapture.core.Channel.V" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.Channel.R">
+<code class="descname">R</code><a class="headerlink" href="#value-scandit.datacapture.core.Channel.R" title="Permalink to this definition">#</a></dt>
+<dd><p>Red channel</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.Channel.G">
+<code class="descname">G</code><a class="headerlink" href="#value-scandit.datacapture.core.Channel.G" title="Permalink to this definition">#</a></dt>
+<dd><p>Green channel</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.Channel.B">
+<code class="descname">B</code><a class="headerlink" href="#value-scandit.datacapture.core.Channel.B" title="Permalink to this definition">#</a></dt>
+<dd><p>Blue channel</p>
+</dd></dl>
+
+<dl class="value">
+<dt id="value-scandit.datacapture.core.Channel.A">
+<code class="descname">A</code><a class="headerlink" href="#value-scandit.datacapture.core.Channel.A" title="Permalink to this definition">#</a></dt>
+<dd><p>Alpha channel</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="class-scandit.datacapture.core.ImagePlane">
+<code class="descname">ImagePlane</code><a class="headerlink" href="#class-scandit.datacapture.core.ImagePlane" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">class ImagePlane</code></pre><p>An individual image plane as part of an image buffer. The image plane data may or may not be interleaved with other image planes.</p>
+<dl class="method">
+<dt id="method-scandit.datacapture.core.ImagePlane.ImagePlane">
+<code class="descname">ImagePlane()</code><a class="headerlink" href="#method-scandit.datacapture.core.ImagePlane.ImagePlane" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><code class="descname">ImagePlane</code>(<a class="reference internal" href="#enum-scandit.datacapture.core.Channel" title="Channel enum">Channel</a> <em>channel</em>,
+        <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>subsamplingX</em>,
+        <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>subsamplingY</em>,
+        <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>rowStride</em>,
+        <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>pixelStride</em>,
+        &#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/nio/ByteBuffer.html" title="ByteBuffer">ByteBuffer</a> <em>data</em>)</pre><p>Create new image plane instance from channel, subsamplingX, subsamplingY, rowStride, pixelStride and data.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImagePlane.Channel">
+<code class="descname">channel</code><a class="headerlink" href="#property-scandit.datacapture.core.ImagePlane.Channel" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature"><a class="reference internal" href="#enum-scandit.datacapture.core.Channel" title="Channel enum">Channel</a> <code class="descname">getChannel</code>()
+</pre></dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImagePlane.Data">
+<code class="descname">data</code><a class="headerlink" href="#property-scandit.datacapture.core.ImagePlane.Data" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <a class="reference external" href="https://developer.android.com/reference/java/nio/ByteBuffer.html" title="ByteBuffer">ByteBuffer</a> <code class="descname">getData</code>()
+</pre><p>The bytes used by this image plane. For interleaved image planes, parts of the bytes exposed this property may not be part of this plane and belong to other planes. For example, for an <a class="reference internal" href="#class-scandit.datacapture.core.ImageBuffer" title="ImageBuffer class">ImageBuffer</a> with red, green and blue planes using an interleaved layout, only every third byte belongs to the red image plane.</p>
+<p>The life-time of the data is tied to the life-time of the <a class="reference internal" href="#class-scandit.datacapture.core.ImageBuffer" title="ImageBuffer class">ImageBuffer</a>, which for image buffers belonging to frame data is bound to the life-time of the <a class="reference internal" href="#interface-scandit.datacapture.core.IFrameData" title="FrameData interface">FrameData</a> instance.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImagePlane.SubsamplingX">
+<code class="descname">subsamplingX</code><a class="headerlink" href="#property-scandit.datacapture.core.ImagePlane.SubsamplingX" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getSubsamplingX</code>()
+</pre><p>The amount of subsampling (in pixels in X-direction). For image plane with the exception of U and V planes, the subsampling in both x and y will be 1 (meaning no subsampling). A subsampling of 2 indicates that two horizontally adjacent  pixels share the same pixel data.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImagePlane.SubsamplingY">
+<code class="descname">subsamplingY</code><a class="headerlink" href="#property-scandit.datacapture.core.ImagePlane.SubsamplingY" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getSubsamplingY</code>()
+</pre><p>The amount of subsampling (in pixels in Y-direction). For image plane with the exception of U and V planes, the subsampling in both x and y will be 1 (meaning no subsampling). A subsampling of 2 indicates that two vertically adjacent pixels share the same pixel data.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImagePlane.RowStride">
+<code class="descname">rowStride</code><a class="headerlink" href="#property-scandit.datacapture.core.ImagePlane.RowStride" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getRowStride</code>()
+</pre><p>The number of bytes of a row of pixels. For example, an RGB image will typically have a row stride of 3 * width, with potential padding at the end to match mulitples of 4.</p>
+</dd></dl>
+
+<dl class="property">
+<dt id="property-scandit.datacapture.core.ImagePlane.PixelStride">
+<code class="descname">pixelStride</code><a class="headerlink" href="#property-scandit.datacapture.core.ImagePlane.PixelStride" title="Permalink to this definition">#</a></dt>
+<dd><pre class="full-signature">&#64;NonNull <code class="docutils literal notranslate"><span class="pre">int</span></code> <code class="descname">getPixelStride</code>()
+</pre><p>Number of bytes between two adjacent pixels part of the same image plane. In case of subsampling, this value is the number of bytes per pixel as if there were no subsampling. For example, for a non-interleaved U plane subsampled at 2, the element stride is 1.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scandit AG
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-23556890-7', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Barcode Symbologies &mdash; Data Capture SDK 6.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'6.0.1',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Optimize Scanning Performance" href="optimize-performance.html" />
+    <link rel="prev" title="Configure Which Barcodes Are Read" href="configure-barcodes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Data Capture SDK
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="run-samples.html">Run our Sample Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-sdk.html">Add the SDK to Your App</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Barcode Scanning</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get-started-barcode.html">Get Started With Barcode Scanning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scan-area.html">Set up the Active Scan Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ui-examples.html">Choose the Scanner UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure-barcodes.html">Configure Which Barcodes Are Read</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Barcode Symbologies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gs1-data-carriers">GS1 Data Carriers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#processing-gs1-data">Processing GS1 Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#symbology-specific-notes">Symbology Specific Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optimize-performance.html">Optimize Scanning Performance</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MatrixScan + Augmented Reality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get-started-matrixscan.html">Get Started With MatrixScan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-augmented-reality-overlay.html">Add AR Overlays in MatrixScan</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Data Capture SDK in Detail</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core-concepts.html">Core Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core/api.html">ScanditCaptureCore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="barcode-capture/api.html">ScanditBarcodeCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="label-capture/api.html">ScanditLabelCapture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release-notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support &amp; FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ssl.scandit.com/terms/specifications.pdf">Barcode Scanner Requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://docs.scandit.com/barcode-scanner-sdk.html">SDK 5.x Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migrate-to-6.html">Migrate from Barcode Scanner 5.x</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://ssl.scandit.com">Dashboard</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Data Capture SDK</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Barcode Symbologies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="barcode-symbologies">
+<h1>Barcode Symbologies<a class="headerlink" href="#barcode-symbologies" title="Permalink to this headline">#</a></h1>
+<p>In this guide, you will learn about barcode symbologies and how to optimize the Scandit Data Capture SDK for specific symbology related use-cases.</p>
+<div class="admonition-before-you-start admonition">
+<p class="first admonition-title">Before you start…</p>
+<p>To get the most out of this guide, we recommend that you first take a look at the following guides:</p>
+<ul class="last simple">
+<li><a class="reference internal" href="add-sdk.html"><span class="doc">Add the SDK to Your App</span></a></li>
+<li><a class="reference internal" href="get-started-barcode.html"><span class="doc">Get Started With Barcode Scanning</span></a></li>
+</ul>
+</div>
+<div class="section" id="gs1-data-carriers">
+<h2>GS1 Data Carriers<a class="headerlink" href="#gs1-data-carriers" title="Permalink to this headline">#</a></h2>
+<p>The GS1 organisation defined a <a class="reference external" href="https://www.gs1.org/standards/barcodes-epcrfid-id-keys/gs1-general-specifications">standard</a> to encode application specific data in a barcode. The symbologies Code128, GS1 DataBar, DataMatrix and QR codes can contain GS1 encoded data. The barcode property <a class="reference internal" href="barcode-capture/api/barcode.html#property-scandit.datacapture.barcode.Barcode.IsGs1DataCarrier" title="Barcode.isGs1DataCarrier property">Barcode.isGs1DataCarrier</a> tells you if a barcode contains GS1 encoded data. GS1 data has to be accessed using <a class="reference internal" href="barcode-capture/api/barcode.html#property-scandit.datacapture.barcode.Barcode.RawData" title="Barcode.rawData property">Barcode.rawData</a> and <strong>not</strong> <a class="reference internal" href="barcode-capture/api/barcode.html#property-scandit.datacapture.barcode.Barcode.Data" title="Barcode.data property">Barcode.data</a> because it is stored in machine readable form and might contain non-printable characters such as group separators (ASCII 29).</p>
+<div class="section" id="processing-gs1-data">
+<h3>Processing GS1 Data<a class="headerlink" href="#processing-gs1-data" title="Permalink to this headline">#</a></h3>
+<p>GS1 encoded data cannot be displayed directly to the user. The application identifiers cannot be distinguished from the data and non-printable characters might be part of the data. There are three different options to process the data. Use the Scandit parser API to convert the machine readable data into a human readable string, use the Scandit parser to extract all data elements (Application Identifiers) from the machine readable data or lastly use your own parser to transform the machine readable data.</p>
+<p>A GS1 example of machine readable data where &lt;GS&gt; represents the non-printable group separator character:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">1088748816455721123456789012&lt;GS&gt;11111228</span></code></div></blockquote>
+<p>The same data in the human readable representation:</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">(10)887488164557(21)123456789012(11)111228</span></code></div></blockquote>
+<p>The same data parsed into its application identifiers by the Scandit parser:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parsed&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;indicator&quot;</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;company_prefix&quot;</span> <span class="o">:</span> <span class="s2">&quot;0887488&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;item_reference&quot;</span> <span class="o">:</span> <span class="s2">&quot;16455&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;rawString&quot;</span> <span class="o">:</span> <span class="s2">&quot;10887488164557&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;21&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parsed&quot;</span> <span class="o">:</span> <span class="s2">&quot;123456789012&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rawString&quot;</span> <span class="o">:</span> <span class="s2">&quot;123456789012&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span> <span class="o">:</span> <span class="s2">&quot;11&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parsed&quot;</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;year&quot;</span> <span class="o">:</span> <span class="mi">2011</span><span class="p">,</span>
+            <span class="s2">&quot;month&quot;</span> <span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+            <span class="s2">&quot;day&quot;</span> <span class="o">:</span> <span class="mi">28</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;rawString&quot;</span> <span class="o">:</span> <span class="s2">&quot;111228&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="symbology-specific-notes">
+<h3>Symbology Specific Notes<a class="headerlink" href="#symbology-specific-notes" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><strong>Code128</strong> uses a leading FNC1 character (ASCII 21) to signal GS1 data. The FNC1 character is encoded but will not be returned in the barcode result.</li>
+<li><strong>GS1 DataBar</strong> always contains GS1 data.</li>
+<li><strong>DataMatrix</strong> and <strong>QR Code</strong> use an internal symbology specific FNC1 symbol to signal GS1 data carrier mode. The internal symbol is not returned as part of the result. The common mistake of adding a leading group separator character in raw byte mode does not turn the code into a GS1 data carrier.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scandit AG
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-23556890-7', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
